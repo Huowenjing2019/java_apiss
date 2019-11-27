@@ -407,3 +407,23 @@ dependencies节点。使用dependencyManagement管理的节点依赖不会导入
         git commit -m "文件名"
     12）将本地仓库添加的内容上传到云端的github
         git push -u origin master -f
+
+   --------------------------------------------------------------
+   2019-11-27  周三
+   1、API定义：
+    应用程序接口（Application processer interface）
+    别人写的代码以类的形式封装，开发者自由调用  不是JDK以坐标调用
+   2、Object类：所有类都继承object类
+   hierarchy.层次  ==等号比的是地址是同一个地址，equals比的是对象内容是否相等
+   但是object中的方法是，子类类型赋值给父类引用
+   （instanceof通过返回一个布尔值来指出，这个对象
+     是否是这个特定类或者是它的子类的一个实例。）
+3、等号与equals的区别
+4、Tostring():
+**:toString()方法就是把对象转换成String类型，转换的算法根据类型和实际需要而定。
+    比如一个Integer对象的toString方法就是把这个对象表示的整数转化成字符串，
+    133就成了"133"。
+**:重写toString 方法的好处：
+   可以自定义对象自表示，
+
+
