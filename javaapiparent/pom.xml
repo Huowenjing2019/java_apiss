@@ -14,15 +14,17 @@
     <packaging>pom</packaging>
     <properties>
         <mysql.driver.version>5.1.10</mysql.driver.version>
+        <junit.test.version>4.11</junit.test.version>
     </properties>
     <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.driver.version}</version>
-            </dependency>
-        </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.test.version}</version>
+        </dependency>
+    </dependencies>
+
     </dependencyManagement>
 
 </project>

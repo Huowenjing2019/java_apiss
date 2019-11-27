@@ -10,7 +10,8 @@ public class Driver {
         Person person2=new Person("霍文静",20,148,'女',78);
         System.out.println(person1.equals(person2));
         System.out.println(person1==person2);
-    }
 
+
+    }
 
 }
