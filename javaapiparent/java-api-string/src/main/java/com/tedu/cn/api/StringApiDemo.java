@@ -2,6 +2,8 @@ package com.tedu.cn.api;
 
 import org.junit.Test;
 
+import java.io.UnsupportedEncodingException;
+
 public class StringApiDemo {
     /**
      * 创建String对象的方式有两种
@@ -61,6 +63,86 @@ public  void testString001() {
          * lastIndexOf表示最后一个字符串在字符串中出现的索引
          */
         System.out.println(str1.lastIndexOf("o"));
+    }
+    @Test
+    public void testContains(){
+        /**
+         * 测试api  contains
+         * 字符串是否包含在对象里
+         * 调用是用对象名点方法名
+         */
+        String str="I LOVE YOU!";
+        boolean f=str.contains("LOVE");
+        System.out.println(f);
+    }
+    /**
+     * 拼接两个字符串
+     */
+    @Test
+    public void testConcat(){
+        String str1="I LOVE";
+        str1=str1.concat(" YOU");
+        System.out.println(str1);
+    }
+    @Test
+    public void testEndWithAndStartWith(){
+        /**
+         * 测试字符串是否以某一穿后缀结尾，是就返回True
+         */
+        String str1="i love you";
+        System.out.println(str1.endsWith("ou"));
+    }
+
+    @Test
+    public  void  testUpperCase(){
+        /**
+         * 将字符串转化成大写
+         */
+        String str="hwj";
+        System.out.println(str.toUpperCase());
+    }
+
+    @Test
+    /**
+     * 忽略问题的考虑
+     */
+    public void testEqualsAndIgnoreCase(){
+        String str1="abc";
+        String str2="abc";
+        String str3="ABC";
+        System.out.println(str1.equals(str2));
+        System.out.println(str2.equalsIgnoreCase(str3));
+    }
+
+    @Test
+    public void testGetbytes() throws UnsupportedEncodingException {
+        byte[] bs="i love you".getBytes("UTF-8");
+        for (int i=0;i<bs.length;i++){
+            System.out.println(bs[i]);
+    }
+    }
+
+    @Test
+    /**
+     * 取一段字符串的字符串有两个重载的API叫substring，左闭右开
+     * substring(index)
+     * substring(index,endindex)
+     */
+    public void testSubString(){
+        String str="i love you!";
+        System.out.println(str.substring(2,6));
+        System.out.println(str.substring(0,str.length()-1));
+        String str1="jchwjhfjswww.baidu.comkjkwj";
+        String d="www.baidu.com";
+        System.out.println(str1.substring(str1.indexOf(d),str1.indexOf(d)+d.length()));
+    }
+
+    @Test
+    /**
+     * 类里面是属性和方法
+     */
+    public void testStringBuilder(){
+
     }
 
 }
