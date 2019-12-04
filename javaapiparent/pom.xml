@@ -10,6 +10,7 @@
     <modules>
         <module>java-api-object</module>
         <module>java-api-string</module>
+        <module>java-api-date</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
