@@ -33,7 +33,7 @@ public class DateDemo {
      */
     public void m3(){
         //将具体的日期转化为字符串format
-        SimpleDateFormat  format=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String date = format.format(new Date());
         System.out.println(date);
 
@@ -46,6 +46,5 @@ public class DateDemo {
         SimpleDateFormat format =new SimpleDateFormat("yyyy.MM.dd");
         Date d =format.parse(date);
         System.out.println(d);
-}
-
+    }
 }
