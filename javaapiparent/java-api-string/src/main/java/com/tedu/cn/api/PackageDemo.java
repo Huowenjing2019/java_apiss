@@ -2,6 +2,10 @@ package com.tedu.cn.api;
 
 import org.junit.Test;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 public class PackageDemo {
     @Test
     public void m1(){
@@ -36,6 +40,39 @@ public class PackageDemo {
         Integer c=5;//Integer是方法名，c是对象名
         System.out.println(Integer.toOctalString(15));//8进制
         System.out.println(Integer.toBinaryString(15));//2进制
+    }
+
+    /**
+     * java异常体系
+     * 异常：程序不正常的退出
+     * java语言的异常分为两种
+     * 1）Error
+     *   硬件故障引起的（磁盘损坏，内存空间不足，断电）
+     * 2)Exception
+     *   是由于java程序出的异常
+     *      该异常又分为两种：
+     *         1、编译时异常
+     *         2、运行时异常
+     */
+
+    /**
+     * 测试Exception异常
+     * 处理的两种方法
+     * 1）通过thorws关键字(抛出)显示抛出（方法的屁股后面添加thorw类型），抛给方法的调用者
+     * 2）通过try catch语句
+     * 进行显示的捕获
+     */
+    @Test
+    public void m2(){
+        try {
+            min();
+        } catch (FileNotFoundException e) {
+            System.out.println("出现异常");
+            //e.printStackTrace(); 这是异常栈
+        }
+    }
+    public static void min() throws FileNotFoundException {
+        InputStream inputStream = new FileInputStream("tts.txt");
     }
 
 
