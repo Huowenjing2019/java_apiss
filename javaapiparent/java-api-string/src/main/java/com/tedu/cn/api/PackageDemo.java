@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 
 public class PackageDemo {
@@ -59,7 +60,9 @@ public class PackageDemo {
      * 测试Exception异常
      * 处理的两种方法
      * 1）通过thorws关键字(抛出)显示抛出（方法的屁股后面添加thorw类型），抛给方法的调用者
+     * Alt+enter
      * 2）通过try catch语句
+     * Ctrl+alt+t  然后选择6
      * 进行显示的捕获
      */
     @Test
@@ -73,6 +76,19 @@ public class PackageDemo {
     }
     public static void min() throws FileNotFoundException {
         InputStream inputStream = new FileInputStream("tts.txt");
+    }
+
+    @Test
+    public void mytest(){
+        try {
+            mytest1();
+        } catch (FileNotFoundException e) {
+            System.out.println("没有找到,出现异常");
+            //e.printStackTrace();
+        }
+    }
+    public static void mytest1() throws FileNotFoundException {
+        InputStream inputStream = new FileInputStream("YHT.txt");
     }
 
 
