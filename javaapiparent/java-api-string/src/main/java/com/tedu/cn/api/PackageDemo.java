@@ -1,11 +1,9 @@
 package com.tedu.cn.api;
 
+import com.tedu.cn.api.ex.PasswordException;
 import org.junit.Test;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 public class PackageDemo {
     @Test
@@ -90,8 +88,67 @@ public class PackageDemo {
     public static void mytest1() throws FileNotFoundException {
         InputStream inputStream = new FileInputStream("YHT.txt");
     }
+    @Test
+    public void m5(){
+        ex();
+    }
+    public static void ex() {
+        try {
+            File f=new File("ttx.txt");
+            if(!f.exists()){
+               f.createNewFile();
+           }
+            InputStream inputStream = new FileInputStream("JJJ.txt");
+            System.out.println(1 / 0);
+            String str = null;
+            System.out.println(str.lastIndexOf("c"));
+        } catch (FileNotFoundException f1) {
+            System.out.println("文件未找到");
+        } catch (ArithmeticException f2) {
+            System.out.println("除数不能为0");
+        } catch (NullPointerException f3) {
+            System.out.println("出现空指针异常");
+        } catch (IOException e) {
+            System.out.println("文件读取错误");
+            //e.printStackTrace();
+        }
 
 
+    }
+    @Test
+    public void m6(){
+        try {
+            autoEx();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void autoEx() throws Exception {
+        throw new Exception("我创建的异常");
+    }
+
+    /**
+     * 运行时异常
+     */
+    public static void mmm1(){
+        RuntimeException r= new RuntimeException("出现运行异常");
+        throw r;
+    }
 
 
+    @Test
+    public void m8(){
+        String psw="2855hsmne";
+        if(psw.length()<8){
+            throw new PasswordException(2,"密码安全系数不够");
+        }
+        if(psw.matches("\\d{4,8}&&\\w{4,8}")){
+            throw new PasswordException(3,"密码须有数字与字母组成");
+        }
+        if(!psw.equals("2855hsmne")){
+            throw new PasswordException("密码错误");
+        }else{
+            System.out.println("密码设置成功");
+        }
+    }
 }
