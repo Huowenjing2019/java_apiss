@@ -11,6 +11,7 @@
         <module>java-api-object</module>
         <module>java-api-string</module>
         <module>java-api-date</module>
+        <module>java-api-io</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

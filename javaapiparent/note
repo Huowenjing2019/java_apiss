@@ -518,3 +518,5 @@ dependencies节点。使用dependencyManagement管理的节点依赖不会导入
     手动抛出异常：使用throw关键字
     语法为：throw异常对象。表示手动抛出的异常对象。
  2、运行时异常
+
+ 3、File类是位于java.io
